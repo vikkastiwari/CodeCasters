@@ -55,6 +55,7 @@
           cursor: pointer;
         }
       </style>
+
 </head>
 
 <body>
@@ -572,7 +573,7 @@
     <!-- Main Content start -->
     <main class="main-content">
         <div class="overlay">
-            <h4 class="positive-text">It's okay to ask for help. Our community is here for you.</h4>
+            <h4 class="positive-text" id="textContainer"></h4>
             <a href="cc-group.html" class="cta-button">Explore the community</a>
         </div>
     </main>
@@ -758,6 +759,38 @@
     <script src="assets/js/plugins/plugin.js"></script>
     <script src="assets/js/main.js"></script>
 
+
+    <script>
+        // Array of texts
+        var texts = [
+            "Remember, it's okay to not have everything figured out.",
+            "You're stronger than you think. We're here to support you.",
+            "Every journey begins with a single step. Start your journey to peace today.",
+            "You are not alone. Our community cares for you.",
+            "It's okay to ask for help. Our community is here for you.",
+            "Breathe in peace, breathe out stress. You're safe here.",
+            "One day at a time. We're here to help you navigate your journey.",
+            "Your feelings matter. Share them in a community that cares.",
+            "You have within you right now, everything you need to deal with whatever the world can throw at you.",
+            "Peace comes from within. Do not seek it outside but if you do, seek with us."
+        ];
+
+        // Get the text container element
+        var textContainer = document.getElementById("textContainer");
+
+        // Initialize index and set initial text
+        var index = 0;
+        textContainer.innerHTML = texts[index];
+
+        // Function to change text
+        function changeText() {
+        index = (index + 1) % texts.length; // Increment index
+        textContainer.innerHTML = texts[index]; // Set new text
+        }
+
+        // Change text every 5 seconds
+        setInterval(changeText, 3000);
+    </script>
 </body>
 
 
