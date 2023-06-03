@@ -2191,32 +2191,10 @@
         var abuseRegex = /\b((moth(er|a))?\s?[fs]u+c*k+(ed|a|er|ing|ie|tard|)?|kill yourself|pussy|bitch|ass+\s*?(hole)?|bastard|cunt|slut)\b/i
         var negationRegex = /\b((not|(should|do) not)|(don't|dont\s|shouldn't|shouldnt\s)|never)\b/i
 
-        const post = () => {
-            var postText = document.getElementById("post_text").value
-            var isSOS = sosRegex.test(postText)
-            var isAbuse = abuseRegex.test(postText) && !negationRegex.test(postText)
+        const interval = () => {
+            var textContainer = document.getElementById("textContainer");
 
-            console.log(isSOS,document.getElementById("post_text").value)
-
-            if(document.getElementById("post_text").value === ''){
-                return;
-            }
-            if(isAbuse){
-                alert("Abuse of any kind is not tolerated. Another attempt will result in a ban.");
-                document.getElementById("post_text").value = "";
-                event.preventDefault();
-                return;
-            }
-
-            var postPara = ``;
-
-            if (isAbuse) {
-                postPara = `<p id="post-div" class="description" style="filter: blur(4px);">${postText} </p>`;
-            } else {
-                postPara = `<p id="post-div" class="description style="filter: blur(0px);">${postText} </p>`;
-            }
-
-            var sosResponse = `<div class="comments-area mt-5">
+            textContainer.innerHTML = `<div class="comments-area mt-5">
                                 <div class="single-comment-area ms-1 ms-xxl-15">
                                     <div class="parent-comment d-flex gap-2 gap-sm-4">
                                         <div class="avatar-item d-center align-items-baseline">
@@ -2300,7 +2278,35 @@
                                     </div>
                                     
                                 </div>
-                            </div>`
+                            </div>`;
+        }
+
+        const post = () => {
+            var postText = document.getElementById("post_text").value
+            var isSOS = sosRegex.test(postText)
+            var isAbuse = abuseRegex.test(postText) && !negationRegex.test(postText)
+
+            console.log(isSOS,document.getElementById("post_text").value)
+
+            if(document.getElementById("post_text").value === ''){
+                return;
+            }
+            if(isAbuse){
+                alert("Abuse of any kind is not tolerated. Another attempt will result in a ban.");
+                document.getElementById("post_text").value = "";
+                event.preventDefault();
+                return;
+            }
+
+            var postPara = ``;
+
+            if (isAbuse) {
+                postPara = `<p id="post-div" class="description" style="filter: blur(4px);">${postText} </p>`;
+            } else {
+                postPara = `<p id="post-div" class="description style="filter: blur(0px);">${postText} </p>`;
+            }
+
+            setTimeout(interval, 3000);
 
             posts.push(`<div class="post-single-box p-3 p-sm-5">
                             <div class="top-area pb-5">
@@ -2411,7 +2417,7 @@
                                     </div>
                                 </div>
                             </form>
-                            ${isSOS ? sosResponse : ''}
+                            ${isSOS ? '<div id="textContainer"></div>' : ''}
                         </div>`)
             document.getElementById('post-div').innerHTML = posts.reverse()
             document.getElementById("post_text").value = ""
