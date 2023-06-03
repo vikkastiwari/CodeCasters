@@ -2187,9 +2187,9 @@
     <!-- Go Live Popup end -->
     <script type="text/javascript">
         var posts = [];
-        var sosRegex = /\b(end(ing)?|giv(e|ing) up|quit(ing|ting)?|(los|hat|tak)(e|ing)|stop(ping)?|fed up|sick|tired|exhausted|done|snuff out|do not care|scared|cannot deal with)( on| of| with| to| about)?(( my)?( fucking| own)?)?( this)? life|better( for| off)?( me)?( to| to be)?( dead| die)|(can't|don't want)?( to)?( take)?( it)?( anymore)|kill (myself|me)|(wanna|want to) (die)\b/ig
-        var abuseRegex = /\b((moth(er|a))?\s?[fs]u+c*k+(ed|a|er|ing|ie|tard|)?|kill yourself|pussy|bitch|ass+\s*?(hole)?|bastard|cunt|slut)\b/ig
-        var negationRegex = /\b((not|(should|do) not)|(don't|dont\s|shouldn't|shouldnt\s)|never)\b/ig
+        var sosRegex = /\b(end(ing)?|giv(e|ing) up|quit(ing|ting)?|(los|hat|tak)(e|ing)|stop(ping)?|fed up|sick|tired|exhausted|done|snuff out|do not care|scared|cannot deal with)( on| of| with| to| about)?(( my)?( fucking| own)?)?( this)? life|better( for| off)?( me)?( to| to be)?( dead| die)|(can't|don't want)?( to)?( take)?( it)?( anymore)|kill (myself|me|myself )|(wanna|want to) (die)\b/i
+        var abuseRegex = /\b((moth(er|a))?\s?[fs]u+c*k+(ed|a|er|ing|ie|tard|)?|kill yourself|pussy|bitch|ass+\s*?(hole)?|bastard|cunt|slut)\b/i
+        var negationRegex = /\b((not|(should|do) not)|(don't|dont\s|shouldn't|shouldnt\s)|never)\b/i
 
         const post = () => {
             var postText = document.getElementById("post_text").value
@@ -2215,6 +2215,92 @@
             } else {
                 postPara = `<p id="post-div" class="description style="filter: blur(0px);">${postText} </p>`;
             }
+
+            var sosResponse = `<div class="comments-area mt-5">
+                                <div class="single-comment-area ms-1 ms-xxl-15">
+                                    <div class="parent-comment d-flex gap-2 gap-sm-4">
+                                        <div class="avatar-item d-center align-items-baseline">
+                                            <img class="avatar-img max-un" src="assets/images/final_website_logo.png" style="border-raidus:50%" alt="avatar">
+                                        </div>
+                                        <div class="info-item">
+                                            <div class="top-area px-4 py-3 d-flex gap-3 align-items-start justify-content-between">
+                                                <div class="title-area">
+                                                    <h6 class="m-0 mb-3"><a href="public-profile-post.html">Caster AI</a></h6>
+                                                    <p class="mdtxt">
+                                                        I understand that you are feeling suicidal and that you are in a lot of pain. I want to assure you that there are people who want to help. Suicide is never the answer, and there are always other options.</br></br>
+
+            If you are thinking about harming yourself, please reach out to a crisis hotline or mental health professional. There is help available, and you don't have to go through this alone. Here are some resources that can help:</br></br>
+
+            Samaritans Mumbai: 1800 234 8255</br>
+            Pratham: 022 2490 9000</br>
+            Nari Helpline: 1800 575 7890</br></br>
+
+            You can also reach out to our partners for professional help:</br></br>
+
+            Wysa</br>
+            Amaha</br>
+            Little Otter</br>
+            Tava Health</br></br>
+
+            Please know that I am a bot and that this is not medical advice. If you are in immediate danger, please call 911 or go to the nearest emergency room.</br></br>
+
+            A human will reach out to you soon. In the meantime, please take care of yourself. Here are some things you can do to help yourself in the moment:</br></br>
+
+            Talk to someone you trust: Talk to a friend, family member, therapist, or anyone else you feel comfortable talking to.</br></br>
+
+            Do something you enjoy: Listen to music, watch a movie, read a book, or do something else that makes you happy.</br></br>
+
+            Take a break from whatever is stressing you out: Go for a walk, take a nap, or do something else that will help you relax.</br></br>
+
+            Call a crisis hotline: If you are feeling overwhelmed, reach out to a crisis hotline for support.</br>
+            Remember, you are not alone. There are people who care about you and want to help. Please reach out for help if you are feeling suicidal.</br>
+    
+                                                    </p>
+                                                </div>
+                                                <div class="btn-group dropend cus-dropdown">
+                                                    <button type="button" class="dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="material-symbols-outlined fs-xxl m-0"> more_horiz </i>
+                                                    </button>
+                                                    <ul class="dropdown-menu p-4 pt-2">
+                                                        <li>
+                                                            <a class="droplist d-flex align-items-center gap-2" href="#">
+                                                                <i class="material-symbols-outlined mat-icon"> hide_source </i>
+                                                                <span>Hide Comments</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="droplist d-flex align-items-center gap-2" href="#">
+                                                                <i class="material-symbols-outlined mat-icon"> flag </i>
+                                                                <span>Report Comments</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <ul class="like-share d-flex gap-6 mt-2">
+                                                <li class="d-center">
+                                                    <button class="mdtxt">Like</button>
+                                                </li>
+                                                <li class="d-center flex-column">
+                                                    <button class="mdtxt reply-btn">Reply</button>
+                                                </li>
+                                                <li class="d-center">
+                                                    <button class="mdtxt">Share</button>
+                                                </li>
+                                            </ul>
+                                            <form action="#" class="comment-form">
+                                                <div class="d-flex gap-3">
+                                                    <input placeholder="Write a comment.." class="py-3">
+                                                    <button class="cmn-btn px-2 px-sm-5 px-lg-6">
+                                                        <i class="material-symbols-outlined mat-icon m-0 fs-xxl"> near_me </i>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>`
 
             posts.push(`<div class="post-single-box p-3 p-sm-5">
                             <div class="top-area pb-5">
@@ -2325,6 +2411,7 @@
                                     </div>
                                 </div>
                             </form>
+                            ${isSOS ? sosResponse : ''}
                         </div>`)
             document.getElementById('post-div').innerHTML = posts.reverse()
             document.getElementById("post_text").value = ""
