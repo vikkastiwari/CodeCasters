@@ -732,7 +732,7 @@
                                 </li>
                                 <li class="d-flex align-items-center gap-2">
                                     <!-- <li class="d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#activityMod"> -->
-                                    <button class="cmn-btn" onClick="post()">Post</button>
+                                    <button class="cmn-btn" type="button" onClick="post()">Post</button>
                                 </li>
                             </ul>
                         </form>
@@ -2196,7 +2196,17 @@
             var isSOS = sosRegex.test(postText)
             var isAbuse = abuseRegex.test(postText) && !negationRegex.test(postText)
 
-            console.log(isSOS)
+            console.log(isSOS,document.getElementById("post_text").value)
+
+            if(document.getElementById("post_text").value === ''){
+                return;
+            }
+            if(isAbuse){
+                alert("Abuse of any kind is not tolerated. Another attempt will result in a ban.");
+                document.getElementById("post_text").value = "";
+                event.preventDefault();
+                return;
+            }
 
             var postPara = ``;
 
@@ -2214,7 +2224,7 @@
                                             <img class="avatar-img max-un" src="assets/images/avatar-1.png" alt="avatar">
                                         </div>
                                         <div class="info-area">
-                                            <h6 class="m-0"><a href="public-profile-post.html">Lori Cortez</a></h6>
+                                            <h6 class="m-0"><a href="public-profile-post.html">MumbaiMindful</a></h6>
                                             <span class="mdtxt status">Active</span>
                                         </div>
                                     </div>
