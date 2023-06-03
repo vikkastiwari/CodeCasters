@@ -29,7 +29,7 @@
 :root {
   --body-font: "Inter", sans-serif;
   --body-color: #F9FBFC;
-  --primary-color: #0085FF;
+  --primary-color: #F08080;
   --secondary-color: #F3F3F3;
   --border-color: #E6E6E6;
   --border-1st-color: #E2E2E2;
@@ -42,13 +42,13 @@
   --para-1st-color: #888888;
   --para-2nd-color: #222222;
   --para-3rd-color: #888888;
-  --para-4th-color: #00A469;
+  --para-4th-color: #fff;
   --para-5th-color: #666666;
   --para-6th-color: #666666;
   --box-1st-color: #F3F3F3;
   --box-2nd-color: #F9FBFC;
   --btn-1st-color: #DDDDDD;
-  --btn-2nd-color: #BDF8DB;
+  --btn-2nd-color: #FFC0CB;
   --section-1st-color: #FFFFFF;
   --box-shadow: 0px 4px 26px rgba(222, 222, 222, 0.25);
   --box-2nd-shadow: 0px 4px 26px rgba(189, 189, 189, 0.25);
@@ -66,7 +66,7 @@
 
 .dark-ui {
   --body-color: #152033;
-  --primary-color: #0085FF;
+  --primary-color: #F08080;
   --secondary-color: #F3F3F3;
   --border-color: #2B3B58;
   --border-1st-color: #2B3B58;
@@ -82,7 +82,7 @@
   --para-6th-color: #A6ACB6;
   --box-1st-color: #2B3B58;
   --box-2nd-color: #2B3B58;
-  --btn-1st-color: #0085FF;
+  --btn-1st-color: #F08080;
   --btn-2nd-color: #185E54;
   --section-1st-color: #212F48;
   --box-shadow: 0px 4px 26px rgba(66, 66, 66, 0.25);
@@ -217,7 +217,7 @@ button {
 }
 
 .link {
-  color: #0085FF;
+  color: #F08080;
 }
 
 .single-input {
@@ -708,7 +708,7 @@ li {
 }
 .cmn-btn.fourth:hover {
   color: var(--bs-white);
-  background-color: #01AC5A;
+  background-color: #F08080;
 }
 .cmn-btn.fourth:hover i, .cmn-btn.fourth:hover span {
   color: var(--bs-white);
@@ -1203,7 +1203,7 @@ li {
   color: var(--para-1st-color);
 }
 .header-menu .single-item.messages-area .sms {
-  color: #0085FF;
+  color: #F08080;
 }
 .header-menu .single-item.messages-area .abs-area {
   right: -25px;
@@ -1969,7 +1969,7 @@ li {
   background-color: var(--body-color);
 }
 .main-content .graph-box {
-  background: #0085FF;
+  background: #F08080;
   border-radius: 20px;
 }
 .main-content .graph-box path {
