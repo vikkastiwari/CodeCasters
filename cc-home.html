@@ -576,6 +576,10 @@
             <h4 class="positive-text" id="textContainer"></h4>
             <a href="cc-group.html" class="cta-button">Explore the community</a>
         </div>
+        <audio id="myAudio" autoplay loop>
+            <source src="./assets/images/calm.wav" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
     </main>
     <!-- Main Content end -->
 
@@ -790,6 +794,13 @@
 
         // Change text every 5 seconds
         setInterval(changeText, 3000);
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            var audio = document.getElementById('myAudio');
+            console.log('audio playing');
+            audio.play();
+        });
+
     </script>
 </body>
 
